@@ -20,3 +20,102 @@ int main(){
 }
 return 0;
 }
+
+
+
+QUESTION 14
+
+
+#include<stdio.h>
+int fib (int n);
+int main()
+{
+    int n,result;
+    printf("enter the number");
+    scanf("%d",&n);
+    result = fib(n); //function calling
+    printf("the fibonacci series is %d",result);
+return 0;
+
+}
+//function defintion
+int fib (int n)
+{
+if(n==0)
+return 0;
+else if(n==1)
+return 1;
+else 
+return fib(n-1)+fib(n-2);
+}
+
+
+QUESTION 15
+
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int num,original,rem,sum=0,count=0;
+
+printf("enter a number ");
+scanf("%d",& num);
+original = num;
+while(num!=0)
+{
+num=num/10;
+count++;
+}
+num=original;
+while(num!=0)
+{
+ rem=num%10;
+ sum=sum+pow(rem,count);
+ num=num/10;
+}
+ if(sum==original)
+ printf("given number is armstrong");
+ else
+ printf("given number is not armstrong");
+ return 0;
+}
+
+
+QUESTION 16
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int num,original,rem,sum,count,n,i,temp;
+    printf("enter a range");
+    scanf("%d",&n);
+
+for(i=1;i<=n;i++)
+{
+    num=i;
+    original=i;
+    temp=i;
+    count=0;
+    sum=0;
+    while(temp!=0)
+{
+temp=temp/10;
+count++;
+}
+temp=num;
+while(temp!=0)
+{
+ rem=temp%10;
+ sum=sum+pow(rem,count);
+ temp=temp/10;
+
+}
+ if(sum==original)
+{
+    printf("%d",original);
+}
+}
+return 0;
+}
